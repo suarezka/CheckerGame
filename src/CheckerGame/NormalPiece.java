@@ -2,13 +2,17 @@ package CheckerGame;
 
 public class NormalPiece extends GamePiece {
 	
-	private Player owner;
+	public Player owner;
 	
 	protected NormalPiece(Player player) {
 		this.owner = player;
 		//sets player to piece
 	}
 
+	public Player player() {
+		return owner;
+	}
+	
 	@Override
 	public String type() {
 		return "Pawn";

@@ -31,6 +31,8 @@ public class CheckerPanel extends JPanel {
 	//images for icons
 	private Image redPieces;
 	private Image grayPieces;
+	private Image grayPieceResize;
+	private Image redPieceResize;
 	//Icons
 	private ImageIcon rPieces;
 	private ImageIcon gPieces;
@@ -73,6 +75,9 @@ public class CheckerPanel extends JPanel {
 						if(model.pieceAt(a, b).player() == Player.GRAY) {
 							board[a][b].setIcon(gPieces);
 						}
+						if(model.pieceAt(a, b).player() == Player.RED) {
+							board[a][b].setIcon(rPieces);
+						}
 					}
 				}
 			}
@@ -83,10 +88,15 @@ public class CheckerPanel extends JPanel {
 		//load graphics
 		
 		try {
+			//load images
 			redPieces = ImageIO.read(getClass().getResource("/Resources/beer-cap-icon-67249.png"));
 			grayPieces = ImageIO.read(getClass().getResource("/Resources/ff-bottle-cap.png"));
-			rPieces = new ImageIcon(redPieces);
-			gPieces = new ImageIcon(grayPieces);
+			//resize images
+			redPieceResize = redPieces.getScaledInstance(220, 220, 220);
+			grayPieceResize = grayPieces.getScaledInstance(250, 250, 250);
+			//set icons
+			rPieces = new ImageIcon(redPieceResize);
+			gPieces = new ImageIcon(grayPieceResize);
 		} 
 		catch (IOException e) {
 			e.printStackTrace();

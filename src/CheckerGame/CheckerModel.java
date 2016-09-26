@@ -9,9 +9,40 @@ public class CheckerModel implements ICheckerModel {
 		
 		//create the board
 		board = new IGamePiece[8][8];
-		//add pieces to board, need to finish game pieces before adding
+		
+		//add gray pieces to board
 		board[0][0] = new NormalPiece(Player.GRAY);
-		//board[0][0] = new GamePiece() {
+		board[0][2] = new NormalPiece(Player.GRAY);
+		board[0][4] = new NormalPiece(Player.GRAY);
+		board[0][6] = new NormalPiece(Player.GRAY);
+		board[0][4] = new NormalPiece(Player.GRAY);
+		
+		board[1][1] = new NormalPiece(Player.GRAY);
+		board[1][3] = new NormalPiece(Player.GRAY);
+		board[1][5] = new NormalPiece(Player.GRAY);
+		board[1][7] = new NormalPiece(Player.GRAY);
+		
+		board[2][0] = new NormalPiece(Player.GRAY);
+		board[2][2] = new NormalPiece(Player.GRAY);
+		board[2][4] = new NormalPiece(Player.GRAY);
+		board[2][6] = new NormalPiece(Player.GRAY);
+		
+		//add red pieces to board
+		board[7][1] = new NormalPiece(Player.RED);
+		board[7][3] = new NormalPiece(Player.RED);
+		board[7][5] = new NormalPiece(Player.RED);
+		board[7][7] = new NormalPiece(Player.RED);
+		
+		board[6][0] = new NormalPiece(Player.RED);
+		board[6][2] = new NormalPiece(Player.RED);
+		board[6][4] = new NormalPiece(Player.RED);
+		board[6][6] = new NormalPiece(Player.RED);
+		
+		board[5][1] = new NormalPiece(Player.RED);
+		board[5][3] = new NormalPiece(Player.RED);
+		board[5][5] = new NormalPiece(Player.RED);
+		board[5][7] = new NormalPiece(Player.RED);
+		
 	}
 	
 	@Override
