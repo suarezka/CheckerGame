@@ -4,6 +4,8 @@ public class CheckerModel implements ICheckerModel {
 
 	private IGamePiece[][] board;
 	private Player player;
+	private int redPieces = 12;
+	private int grayPieces = 12;
 	
 	public CheckerModel() {
 		
@@ -15,7 +17,6 @@ public class CheckerModel implements ICheckerModel {
 		board[0][2] = new NormalPiece(Player.GRAY);
 		board[0][4] = new NormalPiece(Player.GRAY);
 		board[0][6] = new NormalPiece(Player.GRAY);
-		board[0][4] = new NormalPiece(Player.GRAY);
 		
 		board[1][1] = new NormalPiece(Player.GRAY);
 		board[1][3] = new NormalPiece(Player.GRAY);
@@ -57,8 +58,14 @@ public class CheckerModel implements ICheckerModel {
 	}
 
 	public void move(Move move) {
-		// TODO Auto-generated method stub
-		
+		if(pieceAt(move.fromRow, move.fromColumn) != null) {
+			if(pieceAt(move.fromRow, move.fromColumn).isValidMove(move, board)) {
+				if(pieceAt(move.toRow, move.toColumn) == null) {
+					board[move.fromRow][move.fromColumn] = board[move.toRow][move.toColumn];
+				}
+			}
+		}
+		//setNextPlayer();
 	}
 
 	@Override
