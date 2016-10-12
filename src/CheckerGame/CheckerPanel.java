@@ -54,7 +54,7 @@ public class CheckerPanel extends JPanel {
 			for(int c = 0; c < 8; c++) {
 				board[r][c] = new JButton("");
 				board[r][c].addMouseListener(listener);
-				board[r][c].setPreferredSize(new Dimension(100, 100));
+				board[r][c].setPreferredSize(new Dimension(80, 80));
 				center.add(board[r][c]);
 			}
 		}
@@ -93,8 +93,8 @@ public class CheckerPanel extends JPanel {
 			redPieces = ImageIO.read(getClass().getResource("/Resources/beer-cap-icon-67249.png"));
 			grayPieces = ImageIO.read(getClass().getResource("/Resources/ff-bottle-cap.png"));
 			//resize images
-			redPieceResize = redPieces.getScaledInstance(125, 125, 125);
-			grayPieceResize = grayPieces.getScaledInstance(140, 140, 140);
+			redPieceResize = redPieces.getScaledInstance(105, 105, 105);
+			grayPieceResize = grayPieces.getScaledInstance(120, 120, 120);
 			//set icons
 			rPieces = new ImageIcon(redPieceResize);
 			gPieces = new ImageIcon(grayPieceResize);
@@ -121,7 +121,7 @@ public class CheckerPanel extends JPanel {
 						//JOptionPane.showMessageDialog(null, "Game is Paused.");
 						Object[] buttons = {"Resume", "Quit", "Restart"};
 						JPanel p = new JPanel();
-						p.add(new JLabel("Paused" + "/n" + "Please Select an Option"));
+						p.add(new JLabel("Game Paused..." + "Please Select an Option"));
 						JTextField text = new JTextField(10);
 						p.add(text);
 						

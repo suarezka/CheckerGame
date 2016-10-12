@@ -3,10 +3,7 @@ package CheckerGame;
 public enum Player {
 	GRAY, RED;
 	
-	/**
-	 * return the player whose turn is next
-	 * 
-	 */
+	/** Returns next player. */
 	public Player next() {
 		return this == GRAY ? RED : GRAY;
 	}

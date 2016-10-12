@@ -3,21 +3,14 @@ package CheckerGame;
 import java.lang.*;
 
 public interface IGamePiece {
-	/**
-	 * returns the player that owns this piece
-	 * 
-	 */
+	
+	/** Returns the player of piece. */
 	Player player();
 	
-	/**
-	 * Returns what color the piece is
-	 * 
-	 */
+	/** Returns piece color. */
 	String type();
 	
-	/**
-	 * determines moves that can be made
-	 */
+	/** Validates piece movement. */
 	boolean isValidMove(Move move, IGamePiece[][] board);
 	
 	
